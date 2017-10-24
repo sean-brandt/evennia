@@ -1,7 +1,3 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
   build:
@@ -18,7 +14,7 @@ jobs:
       - run:
           name: build container
           command: |
-						docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker build -t seanbrandt/evennia:$CIRCLE_BRANCH .
 
-			- run: docker push seanbrandt/evennia:$CIRCLE_BRANCH
+      - run: docker push seanbrandt/evennia:$CIRCLE_BRANCH
