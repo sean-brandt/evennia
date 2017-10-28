@@ -5,6 +5,18 @@ echo "Environment:"
 env
 echo ""
 
+echo "Network Info:"
+ip addr
+echo 
+echo
+netstat -an |grep LIST
+echo
+echo
+echo "Filesystem Info"
+ls -latr /
+ls -latrR /run
+
+
 if [ "$1" = 'evennia' ]; then
   chown -R ${USER}:${USER} /usr/src/{evennia,game}
   su-exec ${USER} evennia migrate
