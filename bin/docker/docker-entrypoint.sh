@@ -7,11 +7,11 @@ echo ""
 
 echo "Network Info:"
 ip addr
-echo
-echo
+echo ""
+echo ""
 netstat -an |grep LIST
-echo
-echo
+echo ""
+echo ""
 echo "Filesystem Info"
 ls -latr /
 ls -latrR /run
