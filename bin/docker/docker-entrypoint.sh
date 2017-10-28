@@ -7,7 +7,7 @@ echo ""
 
 echo "Network Info:"
 ip addr
-echo 
+echo
 echo
 netstat -an |grep LIST
 echo

@@ -34,10 +34,12 @@ RUN set -x; \
   && apk add --no-cache \
     bash \
     ca-certificates \
+    drill \
     gcc \
     libffi-dev \
     musl-dev \
-    jpeg-dev \
+    net-tools \
+    jpeg-dev \    
     postgresql-client \
     postgresql-dev \
     python \
