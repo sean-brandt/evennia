@@ -18,3 +18,4 @@ jobs:
             docker build -t seanbrandt/evennia:$CIRCLE_BRANCH .
 
       - run: docker push seanbrandt/evennia:$CIRCLE_BRANCH
+
