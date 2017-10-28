@@ -55,8 +55,6 @@ ADD bin/docker/docker-entrypoint.sh /entrypoint.sh
 # install dependencies
 RUN chown -R ${USER}:${USER} /usr/src/evennia \
   && pip install -e /usr/src/evennia \
-    --index-url=http://pypi.python.org/simple/ \
-    --trusted-host pypi.python.org \
   && pip install psycopg2 \
   && pip install cryptography
 
