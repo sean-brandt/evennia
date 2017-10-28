@@ -15,12 +15,16 @@ echo "Filesystem Info"
 ls -latr /
 ls -latrR /run
 ls -latr /usr/src/game
-ls -latr /usr/src/game/conf
+ls -latr /usr/src/game/server/conf
+echo ""
+echo "Server Config"
+cat /usr/src/game/server/conf/settings.py
+echo ""
 
 if [ -f /run/secrets/evennia/secret_settings.py ]; then
-  ln -sf /run/secrets/evennia/secret_settings.py /usr/src/game/conf/secret_settings.py
+  ln -sf /run/secrets/evennia/secret_settings.py /usr/src/game/server/conf/secret_settings.py
   echo "Linked secret settings into place."
-  ls -latr /usr/src/game/conf
+  ls -latr /usr/src/game/server/conf
 fi
 
 if [ "$1" = 'evennia' ]; then
