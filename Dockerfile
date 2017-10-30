@@ -59,9 +59,9 @@ ADD bin/docker/docker-entrypoint.sh /entrypoint.sh
 
 # install dependencies
 RUN chown -R ${USER}:${USER} /usr/src/evennia \
-  && pip install -e /usr/src/evennia \
   && pip install psycopg2 \
-  && pip install cryptography
+  && pip install cryptography \
+  && pip install -e /usr/src/evennia
 
 # add the game source when rebuilding a new docker image from inside
 # a game dir
