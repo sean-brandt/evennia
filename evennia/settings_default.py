@@ -84,14 +84,14 @@ WEBCLIENT_ENABLED = True
 # is too old to support websockets. Requires WEBCLIENT_ENABLED.
 WEBSOCKET_CLIENT_ENABLED = True
 # Server-side websocket port to open for the webclient.
-WEBSOCKET_CLIENT_PORT = 4005
+WEBSOCKET_SERVER_PORT = 4005
 # Interface addresses to listen to. If 0.0.0.0, listen to all. Use :: for IPv6.
-WEBSOCKET_CLIENT_INTERFACE = '0.0.0.0'
+WEBSOCKET_SERVER_INTERFACE = '0.0.0.0'
 # Actual URL for webclient component to reach the websocket. You only need
 # to set this if you know you need it, like using some sort of proxy setup.
-# If given it must be on the form "ws://hostname" (WEBSOCKET_CLIENT_PORT will
-# be automatically appended). If left at None, the client will itself
-# figure out this url based on the server's hostname.
+# If given it must be on the form "ws://hostname" (WEBSOCKET_SERVER_PORT will
+# be automatically appended unless a port is in the URL already). If left at None,
+# the client will itself figure out this url based on the server's hostname.
 WEBSOCKET_CLIENT_URL = None
 # This determine's whether Evennia's custom admin page is used, or if the
 # standard Django admin is used.

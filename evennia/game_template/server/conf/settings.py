@@ -52,7 +52,7 @@ SSH_ENABLED = False
 SSH_PORTS = [4004]
 # Websocket-client port. Visible.
 WEBSOCKET_CLIENT_ENABLED = True
-WEBSOCKET_CLIENT_PORT = 4005
+WEBSOCKET_SERVER_PORT = 4005
 # Internal Server-Portal port. Not visible.
 AMP_PORT = 4006
 

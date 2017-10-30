@@ -8,6 +8,7 @@
 
 from django.conf import settings
 from evennia.utils.utils import get_evennia_version
+from urlparse import urlparse
 
 # Determine the site name and server version
 def set_game_name_and_slogan():
@@ -28,6 +29,7 @@ def set_game_name_and_slogan():
         GAME_SLOGAN = settings.GAME_SLOGAN.strip()
     except AttributeError:
         GAME_SLOGAN = SERVER_VERSION
+
 set_game_name_and_slogan()
 
 # Setup lists of the most relevant apps so
@@ -52,8 +54,13 @@ def set_webclient_settings():
     global WEBCLIENT_ENABLED, WEBSOCKET_CLIENT_ENABLED, WEBSOCKET_PORT, WEBSOCKET_URL
     WEBCLIENT_ENABLED = settings.WEBCLIENT_ENABLED
     WEBSOCKET_CLIENT_ENABLED = settings.WEBSOCKET_CLIENT_ENABLED
-    WEBSOCKET_PORT = settings.WEBSOCKET_CLIENT_PORT
+    WEBSOCKET_PORT = settings.WEBSOCKET_SERVER_PORT
     WEBSOCKET_URL = settings.WEBSOCKET_CLIENT_URL
+
+    if WEBSOCKET_URL:
+        if urlparse(WEBSOCKET_URL).port == None:
+            WEBSOCKET_URL = "{}:{}".format(WEBSOCKET_URL,WEBSOCKET_PORT)
+
 set_webclient_settings()
 
 # The main context processor function
