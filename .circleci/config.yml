@@ -17,7 +17,8 @@ jobs:
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker build --build-arg BUILD_VERSION="${CIRCLE_BRANCH}-$(echo $CIRCLE_SHA1 | cut -c -7)" \
               -t seanbrandt/evennia:${CIRCLE_BRANCH}-$(echo $CIRCLE_SHA1 | cut -c -7) .
-            docker tag seanbrandt/evennia:${CIRCLE_BRANCH}-$(echo $CIRCLE_SHA1 | cut -c -7) seanbrandt/evennia:${CIRCLE_BRANCH} .
+            docker tag "seanbrandt/evennia:${CIRCLE_BRANCH}-$(echo $CIRCLE_SHA1 | cut -c -7)" \
+              "seanbrandt/evennia:${CIRCLE_BRANCH}"
 
       - run:
           name: push images
