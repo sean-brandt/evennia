@@ -27,6 +27,9 @@ ENV LANG en_US.utf8
 
 ARG USER=evennia
 ENV USER=${USER}
+ARG BUILD_VERSION=UNKNOWN
+ENV BUILD_VERSION=${BUILD_VERSION}
+
 
 RUN set -x; \
   addgroup ${USER} \
