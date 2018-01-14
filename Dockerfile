@@ -84,4 +84,4 @@ ENV PS1 "evennia|docker \w $ "
 # startup a shell when we start the container
 ENTRYPOINT  ["/sbin/tini","--","/entrypoint.sh"]
 
-CMD ["evennia","-i","start"]
+CMD ["evennia","-l","server/logs/game.log","-i","start"]
